@@ -1,7 +1,7 @@
 import { Process, Processor } from "@nestjs/bull";
 import { Job } from "bull";
 import { Reminder, User } from "@prisma/client";
-import { PrismaService } from "../../prisma/prisma.service";
+import { PrismaService } from "../../../prisma/prisma.service";
 import { RemindersService, REMINDER_QUEUE, SEND_REMINDER_JOB } from "../reminders.service";
 
 interface ReminderJobData {

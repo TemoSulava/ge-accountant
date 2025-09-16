@@ -1,4 +1,4 @@
-﻿import { IsEnum, IsOptional, IsString, ValidateNested } from "class-validator";
+import { IsEnum, IsOptional, IsString, ValidateNested } from "class-validator";
 import { Type } from "class-transformer";
 
 enum SupportedBank {
@@ -22,6 +22,10 @@ class MappingDto {
   @IsOptional()
   @IsString()
   amount?: string;
+
+  @IsOptional()
+  @IsString()
+  currency?: string;
 
   @IsString()
   description!: string;

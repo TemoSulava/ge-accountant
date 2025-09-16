@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { BellRing, Mail, MessageCircle, Clock3 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../providers/auth-provider";

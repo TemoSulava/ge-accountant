@@ -1,4 +1,4 @@
-﻿import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
 import { clsx } from "clsx";
 
 interface CardProps extends ButtonHTMLAttributes<HTMLDivElement> {

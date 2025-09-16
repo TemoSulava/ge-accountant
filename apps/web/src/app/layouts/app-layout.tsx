@@ -1,4 +1,4 @@
-﻿import { Outlet, useLocation, Link } from "react-router-dom";
+import { Outlet, useLocation, Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { clsx } from "clsx";
 import { useTranslation } from "react-i18next";

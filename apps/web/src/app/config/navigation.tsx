@@ -1,4 +1,4 @@
-﻿import {
+import {
   BookmarkCheck,
   CalendarCheck2,
   CreditCard,

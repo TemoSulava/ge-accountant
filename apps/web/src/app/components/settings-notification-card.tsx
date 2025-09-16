@@ -1,4 +1,4 @@
-﻿import { ReactNode } from "react";
+import { ReactNode } from "react";
 import { Panel } from "../components/ui/panel";
 
 interface SettingsSectionProps {

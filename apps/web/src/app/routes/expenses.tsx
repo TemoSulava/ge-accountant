@@ -1,4 +1,4 @@
-﻿import { useState } from "react";
+import { useState } from "react";
 import { Upload, Filter, ReceiptRussianRuble } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";

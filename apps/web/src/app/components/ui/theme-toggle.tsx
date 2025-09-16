@@ -1,4 +1,4 @@
-﻿import { MoonStar, SunMedium } from "lucide-react";
+import { MoonStar, SunMedium } from "lucide-react";
 import { clsx } from "clsx";
 import { useTheme } from "../../providers/theme-provider";
 

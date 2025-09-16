@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../providers/auth-provider";
 import { useProfitLoss, useCashflow } from "../hooks/use-cashflow";

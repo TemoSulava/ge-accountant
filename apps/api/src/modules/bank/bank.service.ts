@@ -1,10 +1,10 @@
-﻿import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { parse } from "csv-parse/sync";
 import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
 import { RequestUser } from "../../common/types/request-user";
 import { AuditService } from "../audit/audit.service";
-import { BankImportDto, SupportedBank, UpdateTransactionDto } from "./dto/bank-import.dto";
+import { BankImportDto, MappingDto, SupportedBank, UpdateTransactionDto } from "./dto/bank-import.dto";
 
 interface RawTransaction {
   date: string;
@@ -12,7 +12,7 @@ interface RawTransaction {
   currency: string;
   description: string;
   counterparty?: string;
-  raw: Record<string, unknown>;
+  raw: Record<string, string>;
 }
 
 interface RuleCondition {
@@ -27,6 +27,16 @@ interface RuleAction {
 interface ParsedRule {
   condition: RuleCondition;
   action: RuleAction;
+}
+
+interface MappingConfig {
+  date: string;
+  amount?: string;
+  debit?: string;
+  credit?: string;
+  currency?: string;
+  description: string;
+  counterparty?: string;
 }
 
 @Injectable()
@@ -111,22 +121,29 @@ export class BankService {
   }
 
   private parseCsv(text: string, dto: BankImportDto): RawTransaction[] {
+    const mapping = this.resolveMapping(dto.bank, dto.mapping);
+
     const rows = parse(text, {
       skip_empty_lines: true,
       columns: true,
       trim: true
     }) as Record<string, string>[];
 
-    const mapping = this.resolveMapping(dto.bank, dto.mapping);
-
     return rows
       .map((row) => this.normalizeRow(row, mapping))
       .filter((item): item is RawTransaction => !!item);
   }
-
-  private resolveMapping(bank: SupportedBank, mapping?: Record<string, string>) {
+  private resolveMapping(bank: SupportedBank, mapping?: MappingDto): MappingConfig {
     if (mapping) {
-      return mapping;
+      return {
+        date: mapping.date,
+        amount: mapping.amount ?? "",
+        debit: mapping.debit ?? "",
+        credit: mapping.credit ?? "",
+        currency: mapping.currency ?? "",
+        description: mapping.description,
+        counterparty: mapping.counterparty ?? ""
+      };
     }
 
     switch (bank) {
@@ -151,8 +168,7 @@ export class BankService {
         throw new BadRequestException("MAPPING_REQUIRED");
     }
   }
-
-  private normalizeRow(row: Record<string, string>, mapping: Record<string, string>): RawTransaction | null {
+  private normalizeRow(row: Record<string, string>, mapping: MappingConfig): RawTransaction | null {
     const dateValue = row[mapping.date];
     if (!dateValue) {
       return null;
@@ -195,7 +211,7 @@ export class BankService {
     record: RawTransaction,
     rules: ParsedRule[],
     categoryByName: Map<string, string>
-  ) {
+  ): Prisma.BankTransactionCreateManyInput {
     const categoryId = this.applyRules(record, rules, categoryByName);
     return {
       entityId,
@@ -204,11 +220,10 @@ export class BankService {
       currency: record.currency ?? "GEL",
       description: record.description,
       counterparty: record.counterparty,
-      raw: record.raw,
+      raw: record.raw as Prisma.JsonObject,
       categoryId
     };
   }
-
   private applyRules(
     record: RawTransaction,
     rules: ParsedRule[],

@@ -1,4 +1,4 @@
-﻿import { createContext, useContext, useEffect, useMemo, useState, ReactNode } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, ReactNode } from "react";
 
 const STORAGE_KEY = "solo-theme";
 

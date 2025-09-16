@@ -1,19 +1,19 @@
-import { Module } from "@nestjs/common";
-import { ConfigModule } from "@nestjs/config";
-import { BullModule } from "@nestjs/bull";
-import { ScheduleModule } from "@nestjs/schedule";
-import { HealthController } from "./health.controller";
-import { AuthModule } from "./modules/auth/auth.module";
-import { AuditModule } from "./modules/audit/audit.module";
-import { BankModule } from "./modules/bank/bank.module";
-import { CategoriesModule } from "./modules/categories/categories.module";
-import { EntitiesModule } from "./modules/entities/entities.module";
-import { ExpensesModule } from "./modules/expenses/expenses.module";
-import { InvoicesModule } from "./modules/invoices/invoices.module";
-import { RemindersModule } from "./modules/reminders/reminders.module";
-import { ReportsModule } from "./modules/reports/reports.module";
-import { TaxModule } from "./modules/tax/tax.module";
-import { PrismaModule } from "./prisma/prisma.module";
+import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
+import { BullModule } from '@nestjs/bull';
+import { ScheduleModule } from '@nestjs/schedule';
+import { HealthController } from './health.controller';
+import { AuthModule } from './modules/auth/auth.module';
+import { AuditModule } from './modules/audit/audit.module';
+import { BankModule } from './modules/bank/bank.module';
+import { CategoriesModule } from './modules/categories/categories.module';
+import { EntitiesModule } from './modules/entities/entities.module';
+import { ExpensesModule } from './modules/expenses/expenses.module';
+import { InvoicesModule } from './modules/invoices/invoices.module';
+import { RemindersModule } from './modules/reminders/reminders.module';
+import { ReportsModule } from './modules/reports/reports.module';
+import { TaxModule } from './modules/tax/tax.module';
+import { PrismaModule } from './prisma/prisma.module';
 
 @Module({
   imports: [
@@ -21,9 +21,10 @@ import { PrismaModule } from "./prisma/prisma.module";
     ScheduleModule.forRoot(),
     BullModule.forRoot({
       redis: {
-        host: process.env.REDIS_HOST ?? "localhost",
-        port: Number(process.env.REDIS_PORT ?? 6379)
-      }
+        host: process.env.REDIS_URL ?? 'localhost',
+        port: Number(process.env.REDIS_PORT ?? 6379),
+        password: process.env.REDIS_PASSWORD,
+      },
     }),
     PrismaModule,
     AuditModule,
@@ -35,9 +36,8 @@ import { PrismaModule } from "./prisma/prisma.module";
     BankModule,
     TaxModule,
     RemindersModule,
-    ReportsModule
+    ReportsModule,
   ],
-  controllers: [HealthController]
+  controllers: [HealthController],
 })
 export class AppModule {}
-

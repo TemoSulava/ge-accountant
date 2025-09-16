@@ -1,5 +1,3 @@
-// Prisma schema generated from product spec baseline
-// TODO: iterate as business logic evolves.
 
 generator client {
   provider = "prisma-client-js"

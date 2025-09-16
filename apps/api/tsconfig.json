@@ -1,15 +1,28 @@
 ﻿{
-  "extends": "../../packages/config/tsconfig/base.json",
-  "compilerOptions": {
-    "module": "CommonJS",
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "strictPropertyInitialization": false,
-    "sourceMap": true,
-    "outDir": "dist",
-    "baseUrl": "./src"
-  },
-  "exclude": ["node_modules", "dist", "test", "src/**/*.spec.ts", "src/**/*.test.ts"]
+    "extends":  "../../packages/config/tsconfig/base.json",
+    "compilerOptions":  {
+                            "module":  "CommonJS",
+                            "declaration":  true,
+                            "emitDecoratorMetadata":  true,
+                            "experimentalDecorators":  true,
+                            "allowSyntheticDefaultImports":  true,
+                            "strictPropertyInitialization":  false,
+                            "sourceMap":  true,
+                            "outDir":  "dist",
+                            "baseUrl":  "./src",
+                            "types":  [
+                                          "node",
+                                          "express",
+                                          "multer",
+                                          "passport-jwt",
+                                          "cookie-parser"
+                                      ]
+                        },
+    "exclude":  [
+                    "node_modules",
+                    "dist",
+                    "test",
+                    "src/**/*.spec.ts",
+                    "src/**/*.test.ts"
+                ]
 }

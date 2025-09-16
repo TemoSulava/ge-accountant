@@ -1,4 +1,4 @@
-﻿interface ReportCardProps {
+interface ReportCardProps {
   title: string;
   subtitle: string;
   amount: string;

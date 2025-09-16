@@ -1,4 +1,4 @@
-﻿import { Filter, FileCog, FlaskConical } from "lucide-react";
+import { Filter, FileCog, FlaskConical } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../providers/auth-provider";
 import { Panel } from "../components/ui/panel";

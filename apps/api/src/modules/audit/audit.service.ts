@@ -13,7 +13,7 @@ export class AuditService {
         userId,
         entityId,
         action,
-        details
+        details: details as Prisma.JsonObject
       }
     });
   }

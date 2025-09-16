@@ -1,4 +1,4 @@
-﻿const TOKEN_KEY = "solo-access-token";
+const TOKEN_KEY = "solo-access-token";
 const USER_KEY = "solo-user";
 
 export function getAccessToken() {

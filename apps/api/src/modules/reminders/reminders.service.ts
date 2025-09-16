@@ -1,7 +1,8 @@
-﻿import { Injectable, NotFoundException } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectQueue } from "@nestjs/bull";
 import { Cron, CronExpression } from "@nestjs/schedule";
 import { Queue } from "bull";
+import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
 import { AuditService } from "../audit/audit.service";
 import { RequestUser } from "../../common/types/request-user";
@@ -35,7 +36,7 @@ export class RemindersService {
         type: dto.type,
         dueDate: new Date(dto.dueDate),
         channel: dto.channel,
-        payload: dto.payload ?? undefined
+        payload: dto.payload ? (dto.payload as Prisma.JsonObject) : undefined
       }
     });
 
