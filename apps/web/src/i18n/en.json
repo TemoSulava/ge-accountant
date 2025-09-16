@@ -9,7 +9,8 @@
                             "reminders":  "Reminders",
                             "reports":  "Reports",
                             "audit":  "Audit Logs",
-                            "settings":  "Settings"
+                            "settings":  "Settings",
+                            "tax":  "Tax"
                         },
                 "actions":  {
                                 "newInvoice":  "New invoice",
@@ -191,5 +192,49 @@
                                    "manageRules":  "Manage rules",
                                    "volume":  "Monthly volume"
                                }
-                  }
+                  },
+    "tax":  {
+                "notifications":  {
+                                      "closeSuccess":  "Tax period closed",
+                                      "paySuccess":  "Marked as paid",
+                                      "payError":  "Failed to mark as paid",
+                                      "closeError":  "Closing tax period failed",
+                                      "exportError":  "Export failed"
+                                  },
+                "subtitle":  "Monitor turnover, close periods, export RS.ge reports",
+                "table":  {
+                              "actions":  "Actions",
+                              "paidAt":  "Paid at",
+                              "turnover":  "Turnover",
+                              "period":  "Period",
+                              "taxDue":  "Tax due",
+                              "status":  "Status"
+                          },
+                "export":  {
+                               "downloading":  "Downloading...",
+                               "modalTitle":  "Export RS.ge"
+                           },
+                "status":  {
+                               "paid":  "Paid",
+                               "unpaid":  "Pending"
+                           },
+                "form":  {
+                             "periodEnd":  "Period end",
+                             "description":  "Adjust start/end dates if necessary.",
+                             "periodStart":  "Period start",
+                             "submitting":  "Closing...",
+                             "submit":  "Close period",
+                             "title":  "Close period"
+                         },
+                "actions":  {
+                                "close":  "Close current period",
+                                "markPaid":  "Mark paid",
+                                "export":  "Export RS.ge CSV"
+                            },
+                "title":  "Tax periods",
+                "empty":  {
+                              "copy":  "Close the current month to see metrics and generate exports.",
+                              "title":  "No tax periods yet"
+                          }
+            }
 }

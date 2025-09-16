@@ -7,7 +7,8 @@
   LineChart,
   ReceiptText,
   ScrollText,
-  Settings
+  Settings,
+  Scale
 } from "lucide-react";
 
 export interface NavigationItem {
@@ -21,6 +22,7 @@ export const navigationItems: NavigationItem[] = [
   { labelKey: "app.nav.invoices", path: "/invoices", icon: FileText },
   { labelKey: "app.nav.expenses", path: "/expenses", icon: ReceiptText },
   { labelKey: "app.nav.bankImport", path: "/bank-import", icon: CreditCard },
+  { labelKey: "app.nav.tax", path: "/tax", icon: Scale },
   { labelKey: "app.nav.reminders", path: "/reminders", icon: CalendarCheck2 },
   { labelKey: "app.nav.reports", path: "/reports", icon: LineChart },
   { labelKey: "app.nav.audit", path: "/audit", icon: ScrollText },
