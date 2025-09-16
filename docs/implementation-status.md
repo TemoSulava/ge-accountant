@@ -25,6 +25,8 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Expenses UI implemented (receipt dropzone, category tiles, summarised insights).
 - Bank import wizard implemented (mapping UI, CSV dropzone, rule hints, live ledger preview).
 - Tax management screens implemented (period closure form, RS export, mark paid, analytics).
+- Reminders management UI implemented (creation modal, queue stats, history).
+- Financial reports UI implemented (P&L/cashflow charts, filters, totals).
 
 ## In Progress
 - Backend polish: queue monitoring, analytics exports, audit reporting dashboards.

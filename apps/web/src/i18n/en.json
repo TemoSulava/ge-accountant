@@ -275,5 +275,29 @@
                                     "copy":  "Create smart notifications to keep filings on track.",
                                     "title":  "No reminders yet"
                                 }
-                  }
+                  },
+    "reports":  {
+                    "subtitle":  "Analyse income, expenses and cashflow over time",
+                    "filters":  {
+                                    "from":  "From",
+                                    "to":  "To",
+                                    "reset":  "Reset"
+                                },
+                    "expenses":  {
+                                     "subtitle":  "Categorised spending",
+                                     "title":  "Expenses"
+                                 },
+                    "cashflow":  {
+                                     "title":  "Cashflow",
+                                     "inflow":  "Inflow",
+                                     "outflow":  "Outflow",
+                                     "net":  "Net movement",
+                                     "subtitle":  "Track bank inflows/outflows"
+                                 },
+                    "pnl":  {
+                                "subtitle":  "All recognised invoices",
+                                "title":  "Revenue"
+                            },
+                    "title":  "Financial reports"
+                }
 }
