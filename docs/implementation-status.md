@@ -27,6 +27,7 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Tax management screens implemented (period closure form, RS export, mark paid, analytics).
 - Reminders management UI implemented (creation modal, queue stats, history).
 - Financial reports UI implemented (P&L/cashflow charts, filters, totals).
+- Settings UI implemented (entity profile form, notification channels, team/audit quick-links).
 
 ## In Progress
 - Backend polish: queue monitoring, analytics exports, audit reporting dashboards.

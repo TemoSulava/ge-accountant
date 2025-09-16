@@ -299,5 +299,35 @@
                                 "title":  "Revenue"
                             },
                     "title":  "Financial reports"
-                }
+                },
+    "settings":  {
+                     "notifications":  {
+                                           "test":  "Send test",
+                                           "telegramTitle":  "Telegram bot",
+                                           "emailCopy":  "Delivers reminders through Mailhog in development.",
+                                           "telegramCopy":  "Connect your bot token to send instant alerts.",
+                                           "emailTitle":  "Email notifications"
+                                       },
+                     "notificationsCopy":  "Keep your solopreneur workflows aligned.",
+                     "subtitle":  "Configure entity details, notification channels, and team access",
+                     "profile":  {
+                                     "save":  "Save changes"
+                                 },
+                     "notificationsTitle":  "Notification channels",
+                     "audit":  {
+                                   "title":  "Audit history",
+                                   "copy":  "Every change is tracked for compliance.",
+                                   "link":  "Open audit logs"
+                               },
+                     "title":  "Settings",
+                     "team":  {
+                                  "title":  "Invite accountant",
+                                  "copy":  "Grant access to your advisor.",
+                                  "invite":  "Invite"
+                              },
+                     "logo":  {
+                                  "hint":  "PNG, JPG up to 2MB",
+                                  "title":  "Upload branding"
+                              }
+                 }
 }
