@@ -107,3 +107,12 @@ export interface BankTransaction {
   categoryId?: string | null;
   linkedInvoiceId?: string | null;
 }
+
+export interface AuditLog {
+  id: string;
+  entityId: string;
+  userId: string;
+  action: string;
+  details: Record<string, unknown>;
+  createdAt: string;
+}

@@ -1,4 +1,4 @@
-﻿import { ChangeEvent, useMemo, useRef, useState } from "react";
+import { ChangeEvent, useMemo, useRef, useState } from "react";
 import { Upload, CheckCircle2, ListFilter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../providers/auth-provider";
@@ -122,8 +122,8 @@ export function BankImportPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Button size="lg" disabled={!file || importMutation.isLoading} onClick={onSubmit}>
-              {importMutation.isLoading ? t("bankImport.buttons.importing") : t("bankImport.buttons.import")}
+            <Button size="lg" disabled={!file || importMutation.isPending} onClick={onSubmit}>
+              {importMutation.isPending ? t("bankImport.buttons.importing") : t("bankImport.buttons.import")}
             </Button>
             {statusMessage && <span className="text-xs font-semibold text-brand-600">{statusMessage}</span>}
           </div>
@@ -151,7 +151,7 @@ export function BankImportPage() {
                       </p>
                     </div>
                     <span className="text-xs font-semibold text-ink-700">
-                      ₾{Number(transaction.amount ?? 0).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
+                      ?{Number(transaction.amount ?? 0).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
                     </span>
                   </li>
                 ))}

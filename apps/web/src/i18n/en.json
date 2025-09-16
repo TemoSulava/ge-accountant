@@ -329,5 +329,23 @@
                                   "hint":  "PNG, JPG up to 2MB",
                                   "title":  "Upload branding"
                               }
-                 }
+                 },
+    "audit":  {
+                  "subtitle":  "Review every change with detailed context",
+                  "filters":  {
+                                  "from":  "From",
+                                  "to":  "To",
+                                  "reset":  "Reset",
+                                  "all":  "All"
+                              },
+                  "loading":  "Loading audit logs...",
+                  "table":  {
+                                "time":  "Time",
+                                "details":  "Details",
+                                "action":  "Action",
+                                "user":  "User"
+                            },
+                  "empty":  "No audit entries yet.",
+                  "title":  "Audit trail"
+              }
 }

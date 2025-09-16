@@ -1,5 +1,5 @@
-﻿import { useMemo } from "react";
-import { ArrowTrendingUp, Coins, PiggyBank, Receipt, FileText, LineChart, ScrollText } from "lucide-react";
+import { useMemo } from "react";
+import { TrendingUp, Coins, PiggyBank, Receipt, FileText, LineChart, ScrollText } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Panel } from "../components/ui/panel";
@@ -80,28 +80,28 @@ export function DashboardPage() {
   const metrics = [
     {
       title: t("dashboard.metrics.income"),
-      value: `₾${monthIncome.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
+      value: `?${monthIncome.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
       sub: t("dashboard.metrics.incomeSub"),
-      icon: ArrowTrendingUp,
+      icon: TrendingUp,
       accent: "from-brand-400 to-brand-600"
     },
     {
       title: t("dashboard.metrics.expenses"),
-      value: `₾${monthExpenses.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
+      value: `?${monthExpenses.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
       sub: t("dashboard.metrics.expensesSub"),
       icon: Receipt,
       accent: "from-rose-300 to-rose-500"
     },
     {
       title: t("dashboard.metrics.tax"),
-      value: `₾${taxEstimate.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
+      value: `?${taxEstimate.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
       sub: t("dashboard.metrics.taxSub"),
       icon: Coins,
       accent: "from-amber-300 to-amber-500"
     },
     {
       title: t("dashboard.metrics.buffer"),
-      value: `₾${yearTurnover.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
+      value: `?${yearTurnover.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}`,
       sub: t("dashboard.metrics.bufferSub"),
       icon: PiggyBank,
       accent: "from-emerald-300 to-emerald-500"
@@ -160,11 +160,11 @@ export function DashboardPage() {
           <div className="grid gap-3 text-xs text-ink-500">
             <div className="flex items-center justify-between">
               <span>{t("dashboard.threshold.incomeYtd")}</span>
-              <span>₾{yearTurnover.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}</span>
+              <span>?{yearTurnover.toLocaleString("ka-GE", { maximumFractionDigits: 2 })}</span>
             </div>
             <div className="flex items-center justify-between">
               <span>{t("dashboard.threshold.remaining")}</span>
-              <span>₾{Math.max(threshold - yearTurnover, 0).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}</span>
+              <span>?{Math.max(threshold - yearTurnover, 0).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}</span>
             </div>
           </div>
         </Panel>
@@ -203,7 +203,7 @@ export function DashboardPage() {
                   </div>
                   <div className="flex items-center gap-6 text-xs text-ink-500">
                     <span className="font-semibold text-ink-800">
-                      ₾{parseAmount(invoice.total).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
+                      ?{parseAmount(invoice.total).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
                     </span>
                     <span className="rounded-full bg-brand-100 px-3 py-1 font-semibold text-brand-600">
                       {invoice.status}
@@ -245,7 +245,7 @@ export function DashboardPage() {
                     </p>
                   </div>
                   <span className="text-xs font-semibold text-ink-600">
-                    ₾{parseAmount(expense.amount).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
+                    ?{parseAmount(expense.amount).toLocaleString("ka-GE", { maximumFractionDigits: 2 })}
                   </span>
                 </li>
               ))}

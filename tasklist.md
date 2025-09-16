@@ -40,6 +40,6 @@
 7. [x] Implement tax period screens: close period modal, summary, RS.ge export download, reminder scheduling UI.
 8. [x] Create reminders management: list, create modal, status indicators, queue status hints.
 9. [x] Build reports views: P&L and cashflow charts/tables with filters and export controls.
-10. Surface audit trail: filterable log viewer with action badges and context detail panel.
+10. [x] Surface audit trail: filterable log viewer with action badges and context detail panel.
 11. [x] Integrate notification and user settings panels (email/Telegram hooks, timezone, thresholds).
 12. Add sample data seeding UI cues and link to documentation; final polish and accessibility review.
