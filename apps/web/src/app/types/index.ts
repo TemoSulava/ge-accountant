@@ -96,3 +96,14 @@ export interface TaxPeriod {
   paid: boolean;
   paidAt?: string | null;
 }
+
+export interface BankTransaction {
+  id: string;
+  entityId: string;
+  date: string;
+  amount: string;
+  description: string;
+  counterparty?: string | null;
+  categoryId?: string | null;
+  linkedInvoiceId?: string | null;
+}

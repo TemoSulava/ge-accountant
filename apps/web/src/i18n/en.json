@@ -1,135 +1,195 @@
 ﻿{
-  "app": {
-    "title": "Solo Accounting",
-    "nav": {
-      "dashboard": "Dashboard",
-      "invoices": "Invoices",
-      "expenses": "Expenses",
-      "bankImport": "Bank Import",
-      "reminders": "Reminders",
-      "reports": "Reports",
-      "audit": "Audit Logs",
-      "settings": "Settings"
-    },
-    "actions": {
-      "newInvoice": "New invoice",
-      "newExpense": "Add expense",
-      "importBank": "Import bank CSV"
-    },
-    "copy": {
-      "sideDescription": "Manage invoices, expenses, taxes, and reminders in one intuitive space.",
-      "currentView": "Current view",
-      "currentViewDescription": "A complete snapshot of your IE finances in Tbilisi"
-    },
-    "sidebar": {
-      "periodTitle": "Active period",
-      "periodCopy": "September data synced at 09:00. Follow the tasks to send declarations on time.",
-      "viewTasks": "View tasks"
-    }
-  },
-  "dashboard": {
-    "loading": {
-      "title": "Loading dashboard",
-      "copy": "Synchronising your finances..."
-    },
-    "noEntity": {
-      "title": "No entity yet",
-      "description": "Create your IE profile to start tracking.",
-      "action": "Get started"
-    },
-    "metrics": {
-      "income": "Income",
-      "incomeSub": "Last 30 days",
-      "expenses": "Expenses",
-      "expensesSub": "Last 30 days",
-      "tax": "Tax forecast",
-      "taxSub": "Small business 1%",
-      "buffer": "Turnover buffer",
-      "bufferSub": "vs yearly threshold"
-    },
-    "sections": {
-      "trendTitle": "Monthly performance",
-      "trendCopy": "Income vs expenses trend",
-      "thresholdTitle": "Yearly threshold",
-      "thresholdCopy": "Baseline ₾{{threshold}}",
-      "recentInvoices": "Recent invoices",
-      "recentExpenses": "Recent expenses",
-      "upcomingReminders": "Upcoming reminders",
-      "upcomingRemindersCopy": "Stay ahead across communication channels",
-      "quickLinks": "Quick links",
-      "quickLinksCopy": "Jump into detail screens"
-    },
-    "threshold": {
-      "incomeYtd": "Income YTD",
-      "remaining": "Remaining allowance"
-    },
-    "actions": {
-      "viewReports": "View reports",
-      "viewAll": "View all",
-      "createInvoice": "Create invoice",
-      "captureReceipt": "Capture receipt",
-      "createReminder": "Create reminder",
-      "manageReminders": "Manage reminders"
-    },
-    "empty": {
-      "invoicesTitle": "No invoices yet",
-      "invoicesCopy": "Issue the first invoice in seconds.",
-      "expensesTitle": "No expenses yet",
-      "expensesCopy": "Upload a receipt or add one manually.",
-      "remindersTitle": "No reminders",
-      "remindersCopy": "Schedule smart notifications."
-    },
-    "labels": {
-      "uncategorised": "Uncategorised"
-    },
-    "quickLinks": {
-      "invoiceHistory": "Invoice history",
-      "financialReports": "Financial reports",
-      "auditTrail": "Audit trail"
-    }
-  },
-  "invoices": {
-    "title": "Invoices",
-    "subtitle": "Track payment status, send PDFs and emails",
-    "actions": {
-      "new": "New invoice",
-      "view": "Open"
-    },
-    "table": {
-      "number": "Number",
-      "date": "Issued",
-      "total": "Total",
-      "status": "Status",
-      "actions": "Actions"
-    },
-    "loading": "Loading invoices...",
-    "empty": "No invoices for this period yet"
-  },
-  "expenses": {
-    "title": "Expenses",
-    "subtitle": "Capture receipts with OCR and categorise instantly",
-    "actions": {
-      "add": "Add receipt",
-      "reset": "Reset filters"
-    },
-    "dropzone": {
-      "title": "Drag & drop receipt PDF/JPG",
-      "hint": "Supported: JPEG, PNG, PDF. Max 10MB"
-    },
-    "breakdown": {
-      "title": "Category insight",
-      "copy": "Monitor spending momentum across your categories.",
-      "total": "Total"
-    },
-    "list": {
-      "title": "Recent expenses",
-      "count": "{count, plural, one {# expense} other {# expenses}}",
-      "noDescription": "Unlabelled expense"
-    },
-    "loading": "Loading expenses...",
-    "empty": {
-      "title": "No expenses yet",
-      "copy": "Upload your first receipt to unlock automation."
-    }
-  }
+    "app":  {
+                "title":  "Solo Accounting",
+                "nav":  {
+                            "dashboard":  "Dashboard",
+                            "invoices":  "Invoices",
+                            "expenses":  "Expenses",
+                            "bankImport":  "Bank Import",
+                            "reminders":  "Reminders",
+                            "reports":  "Reports",
+                            "audit":  "Audit Logs",
+                            "settings":  "Settings"
+                        },
+                "actions":  {
+                                "newInvoice":  "New invoice",
+                                "newExpense":  "Add expense",
+                                "importBank":  "Import bank CSV"
+                            },
+                "copy":  {
+                             "sideDescription":  "Manage invoices, expenses, taxes, and reminders in one intuitive space.",
+                             "currentView":  "Current view",
+                             "currentViewDescription":  "A complete snapshot of your IE finances in Tbilisi"
+                         },
+                "sidebar":  {
+                                "periodTitle":  "Active period",
+                                "periodCopy":  "September data synced at 09:00. Follow the tasks to send declarations on time.",
+                                "viewTasks":  "View tasks"
+                            }
+            },
+    "dashboard":  {
+                      "loading":  {
+                                      "title":  "Loading dashboard",
+                                      "copy":  "Synchronising your finances..."
+                                  },
+                      "noEntity":  {
+                                       "title":  "No entity yet",
+                                       "description":  "Create your IE profile to start tracking.",
+                                       "action":  "Get started"
+                                   },
+                      "metrics":  {
+                                      "income":  "Income",
+                                      "incomeSub":  "Last 30 days",
+                                      "expenses":  "Expenses",
+                                      "expensesSub":  "Last 30 days",
+                                      "tax":  "Tax forecast",
+                                      "taxSub":  "Small business 1%",
+                                      "buffer":  "Turnover buffer",
+                                      "bufferSub":  "vs yearly threshold"
+                                  },
+                      "sections":  {
+                                       "trendTitle":  "Monthly performance",
+                                       "trendCopy":  "Income vs expenses trend",
+                                       "thresholdTitle":  "Yearly threshold",
+                                       "thresholdCopy":  "Baseline ₾{{threshold}}",
+                                       "recentInvoices":  "Recent invoices",
+                                       "recentExpenses":  "Recent expenses",
+                                       "upcomingReminders":  "Upcoming reminders",
+                                       "upcomingRemindersCopy":  "Stay ahead across communication channels",
+                                       "quickLinks":  "Quick links",
+                                       "quickLinksCopy":  "Jump into detail screens"
+                                   },
+                      "threshold":  {
+                                        "incomeYtd":  "Income YTD",
+                                        "remaining":  "Remaining allowance"
+                                    },
+                      "actions":  {
+                                      "viewReports":  "View reports",
+                                      "viewAll":  "View all",
+                                      "createInvoice":  "Create invoice",
+                                      "captureReceipt":  "Capture receipt",
+                                      "createReminder":  "Create reminder",
+                                      "manageReminders":  "Manage reminders"
+                                  },
+                      "empty":  {
+                                    "invoicesTitle":  "No invoices yet",
+                                    "invoicesCopy":  "Issue the first invoice in seconds.",
+                                    "expensesTitle":  "No expenses yet",
+                                    "expensesCopy":  "Upload a receipt or add one manually.",
+                                    "remindersTitle":  "No reminders",
+                                    "remindersCopy":  "Schedule smart notifications."
+                                },
+                      "labels":  {
+                                     "uncategorised":  "Uncategorised"
+                                 },
+                      "quickLinks":  {
+                                         "invoiceHistory":  "Invoice history",
+                                         "financialReports":  "Financial reports",
+                                         "auditTrail":  "Audit trail"
+                                     }
+                  },
+    "invoices":  {
+                     "title":  "Invoices",
+                     "subtitle":  "Track payment status, send PDFs and emails",
+                     "actions":  {
+                                     "new":  "New invoice",
+                                     "view":  "Open"
+                                 },
+                     "table":  {
+                                   "number":  "Number",
+                                   "date":  "Issued",
+                                   "total":  "Total",
+                                   "status":  "Status",
+                                   "actions":  "Actions"
+                               },
+                     "loading":  "Loading invoices...",
+                     "empty":  "No invoices for this period yet"
+                 },
+    "expenses":  {
+                     "title":  "Expenses",
+                     "subtitle":  "Capture receipts with OCR and categorise instantly",
+                     "actions":  {
+                                     "add":  "Add receipt",
+                                     "reset":  "Reset filters"
+                                 },
+                     "dropzone":  {
+                                      "title":  "Drag \u0026 drop receipt PDF/JPG",
+                                      "hint":  "Supported: JPEG, PNG, PDF. Max 10MB"
+                                  },
+                     "breakdown":  {
+                                       "title":  "Category insight",
+                                       "copy":  "Monitor spending momentum across your categories.",
+                                       "total":  "Total"
+                                   },
+                     "list":  {
+                                  "title":  "Recent expenses",
+                                  "count":  "{count, plural, one {# expense} other {# expenses}}",
+                                  "noDescription":  "Unlabelled expense"
+                              },
+                     "loading":  "Loading expenses...",
+                     "empty":  {
+                                   "title":  "No expenses yet",
+                                   "copy":  "Upload your first receipt to unlock automation."
+                               }
+                 },
+    "bankImport":  {
+                       "mapping":  {
+                                       "credit":  "Credit column",
+                                       "placeholder":  "Column name in CSV",
+                                       "amount":  "Amount column",
+                                       "counterparty":  "Counterparty column",
+                                       "date":  "Date column",
+                                       "debit":  "Debit column",
+                                       "description":  "Description column"
+                                   },
+                       "preview":  {
+                                       "loading":  "Loading transactions...",
+                                       "title":  "Recent transactions",
+                                       "count":  "records",
+                                       "empty":  "Ledger is empty for this entity."
+                                   },
+                       "subtitle":  "BOG/TBC templates, field mapping, rule suggestions",
+                       "dropzone":  {
+                                        "hint":  "Comma separated UTF-8 files up to 5MB",
+                                        "title":  "Click or drop CSV file"
+                                    },
+                       "rules":  {
+                                     "copy":  "Keyword rules from settings will categorise rides, rent and suppliers instantly.",
+                                     "title":  "Bolt/UBER matched automatically"
+                                 },
+                       "buttons":  {
+                                       "import":  "Import transactions",
+                                       "importing":  "Importing..."
+                                   },
+                       "banks":  {
+                                     "bog":  "BOG",
+                                     "other":  "Custom",
+                                     "tbc":  "TBC"
+                                 },
+                       "success":  "Transactions imported successfully.",
+                       "bankLabel":  "Select template",
+                       "hints":  {
+                                     "title":  "Tips",
+                                     "preview":  "Preview shows last 8 transactions in the ledger.",
+                                     "rules":  "Rules auto-categorise transactions once imported.",
+                                     "supported":  "Supports Georgian BOG/TBC CSV exports and custom mapping."
+                                 },
+                       "title":  "Bank CSV import",
+                       "error":  "Import failed. Check CSV format."
+                   },
+    "analytics":  {
+                      "bank":  {
+                                   "pendingCopy":  "Transactions waiting for manual confirmation",
+                                   "rulesCopy":  "Keyword-based suggestions applied automatically",
+                                   "subtitle":  "Monitor volumes, matching rules, and pending reviews",
+                                   "recentTitle":  "Recent transactions",
+                                   "rules":  "Active rules",
+                                   "noTransactions":  "No transactions imported yet.",
+                                   "volumeCopy":  "Total ledger movement this month",
+                                   "pending":  "Pending reviews",
+                                   "title":  "Banking insights",
+                                   "manageRules":  "Manage rules",
+                                   "volume":  "Monthly volume"
+                               }
+                  }
 }

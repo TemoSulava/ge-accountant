@@ -36,7 +36,7 @@
 3. [x] Build dashboard: KPI tiles, threshold bar, recent activity lists, and responsive layout.
 4. [x] Deliver invoices UI: list, create/edit forms with React Hook Form + Zod, item editor, PDF trigger, email send, payments timeline.
 5. Ship expenses experience: receipt upload dropzone with preview/OCR stub, categorisation controls, editable table.
-6. Craft bank import wizard: CSV upload, mapping UI, rule suggestions, transaction review table with bulk actions.
+6. [x] Craft bank import wizard: CSV upload, mapping UI, rule suggestions, transaction review table with bulk actions.
 7. Implement tax period screens: close period modal, summary, RS.ge export download, reminder scheduling UI.
 8. Create reminders management: list, create modal, status indicators, queue status hints.
 9. Build reports views: P&L and cashflow charts/tables with filters and export controls.
