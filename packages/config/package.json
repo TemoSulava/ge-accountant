@@ -1,0 +1,10 @@
+﻿{
+  "name": "@solo/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig.base.json": "./tsconfig/base.json",
+    "./eslint.base.cjs": "./eslint/base.cjs"
+  }
+}

@@ -1,0 +1,12 @@
+﻿{
+  "app": {
+    "title": "Solo Accounting",
+    "nav": {
+      "dashboard": "Dashboard",
+      "invoices": "Invoices",
+      "expenses": "Expenses",
+      "bankImport": "Bank Import",
+      "settings": "Settings"
+    }
+  }
+}

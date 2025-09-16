@@ -1,0 +1,19 @@
+{
+  "name": "solo-accounting",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "npm@10.8.1",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm run dev --workspace web",
+    "dev:api": "npm run start:dev --workspace api",
+    "dev": "npm run dev --workspaces --if-present",
+    "build": "npm run lint && npm run test && npm run build --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "format": "npm run format --workspaces --if-present"
+  }
+}

@@ -1,0 +1,199 @@
+// Prisma schema generated from product spec baseline
+// TODO: iterate as business logic evolves.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id               String     @id @default(cuid())
+  email            String     @unique
+  passwordHash     String
+  firstName        String?
+  lastName         String?
+  locale           String     @default("ka")
+  refreshTokenHash String?
+  createdAt        DateTime   @default(now())
+  updatedAt        DateTime   @updatedAt
+  entities         Entity[]
+  auditLogs        AuditLog[]
+}
+
+model Entity {
+  id              String             @id @default(cuid())
+  userId          String
+  user            User               @relation(fields: [userId], references: [id])
+  displayName     String
+  taxStatus       TaxStatus          @default(SMALL_BUSINESS)
+  regimeFrom      DateTime?
+  annualThreshold Int                @default(500000)
+  iban            String?
+  bankName        String?
+  taxId           String?
+  address         String?
+  timezone        String             @default("Asia/Tbilisi")
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  invoices        Invoice[]
+  expenses        Expense[]
+  transactions    BankTransaction[]
+  taxPeriods      TaxPeriod[]
+  reminders       Reminder[]
+  rules           Rule[]
+  categories      Category[]
+  auditLogs       AuditLog[]
+}
+
+enum TaxStatus {
+  SMALL_BUSINESS
+  STANDARD
+}
+
+model Invoice {
+  id                 String             @id @default(cuid())
+  entityId           String
+  entity             Entity             @relation(fields: [entityId], references: [id])
+  number             String
+  issueDate          DateTime
+  dueDate            DateTime?
+  clientName         String
+  clientEmail        String?
+  clientAddress      String?
+  currency           String             @default("GEL")
+  subtotal           Decimal            @db.Decimal(14, 2)
+  tax                Decimal            @db.Decimal(14, 2) @default(0)
+  total              Decimal            @db.Decimal(14, 2)
+  status             InvoiceStatus      @default(DRAFT)
+  notes              String?
+  pdfUrl             String?
+  items              InvoiceItem[]
+  payments           Payment[]
+  transactions       BankTransaction[]  @relation("InvoiceTransactions")
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+}
+
+enum InvoiceStatus {
+  DRAFT
+  ISSUED
+  PARTIALLY_PAID
+  PAID
+  CANCELLED
+}
+
+model InvoiceItem {
+  id          String   @id @default(cuid())
+  invoiceId   String
+  invoice     Invoice  @relation(fields: [invoiceId], references: [id])
+  description String
+  quantity    Decimal  @db.Decimal(10, 2) @default(1)
+  unitPrice   Decimal  @db.Decimal(14, 2)
+  total       Decimal  @db.Decimal(14, 2)
+}
+
+model Payment {
+  id        String   @id @default(cuid())
+  invoiceId String
+  invoice   Invoice  @relation(fields: [invoiceId], references: [id])
+  amount    Decimal  @db.Decimal(14, 2)
+  date      DateTime
+  method    String
+  reference String?
+}
+
+model Expense {
+  id          String    @id @default(cuid())
+  entityId    String
+  entity      Entity    @relation(fields: [entityId], references: [id])
+  date        DateTime
+  amount      Decimal   @db.Decimal(14, 2)
+  currency    String    @default("GEL")
+  categoryId  String?
+  category    Category? @relation("CategoryExpenses", fields: [categoryId], references: [id])
+  description String?
+  receiptUrl  String?
+  ocrText     String?
+  createdAt   DateTime  @default(now())
+}
+
+model Category {
+  id            String             @id @default(cuid())
+  entityId      String
+  entity        Entity             @relation(fields: [entityId], references: [id])
+  name          String
+  type          CategoryType
+  expenses      Expense[]          @relation("CategoryExpenses")
+  transactions  BankTransaction[]  @relation("CategoryTransactions")
+}
+
+enum CategoryType {
+  INCOME
+  EXPENSE
+}
+
+model BankTransaction {
+  id               String     @id @default(cuid())
+  entityId         String
+  entity           Entity     @relation(fields: [entityId], references: [id])
+  date             DateTime
+  amount           Decimal    @db.Decimal(14, 2)
+  currency         String     @default("GEL")
+  description      String
+  counterparty     String?
+  raw              Json
+  categoryId       String?
+  category         Category?  @relation("CategoryTransactions", fields: [categoryId], references: [id])
+  linkedInvoiceId  String?
+  linkedInvoice    Invoice?   @relation("InvoiceTransactions", fields: [linkedInvoiceId], references: [id])
+}
+
+model TaxPeriod {
+  id          String   @id @default(cuid())
+  entityId    String
+  entity      Entity   @relation(fields: [entityId], references: [id])
+  periodStart DateTime
+  periodEnd   DateTime
+  turnover    Decimal  @db.Decimal(14, 2) @default(0)
+  taxRate     Decimal  @db.Decimal(5, 2)  @default(1)
+  taxDue      Decimal  @db.Decimal(14, 2) @default(0)
+  paid        Boolean  @default(false)
+  paidAt      DateTime?
+}
+
+model Reminder {
+  id        String   @id @default(cuid())
+  entityId  String
+  entity    Entity   @relation(fields: [entityId], references: [id])
+  type      String
+  dueDate   DateTime
+  sentAt    DateTime?
+  channel   String
+  payload   Json?
+}
+
+model Rule {
+  id        String   @id @default(cuid())
+  entityId  String
+  entity    Entity   @relation(fields: [entityId], references: [id])
+  name      String
+  appliesTo String
+  condition Json
+  action    Json
+  priority  Int      @default(100)
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  entityId  String
+  entity    Entity   @relation(fields: [entityId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  action    String
+  details   Json
+  createdAt DateTime @default(now())
+}
