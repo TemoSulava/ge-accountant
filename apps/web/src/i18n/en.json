@@ -104,5 +104,32 @@
     },
     "loading": "Loading invoices...",
     "empty": "No invoices for this period yet"
+  },
+  "expenses": {
+    "title": "Expenses",
+    "subtitle": "Capture receipts with OCR and categorise instantly",
+    "actions": {
+      "add": "Add receipt",
+      "reset": "Reset filters"
+    },
+    "dropzone": {
+      "title": "Drag & drop receipt PDF/JPG",
+      "hint": "Supported: JPEG, PNG, PDF. Max 10MB"
+    },
+    "breakdown": {
+      "title": "Category insight",
+      "copy": "Monitor spending momentum across your categories.",
+      "total": "Total"
+    },
+    "list": {
+      "title": "Recent expenses",
+      "count": "{count, plural, one {# expense} other {# expenses}}",
+      "noDescription": "Unlabelled expense"
+    },
+    "loading": "Loading expenses...",
+    "empty": {
+      "title": "No expenses yet",
+      "copy": "Upload your first receipt to unlock automation."
+    }
   }
 }
