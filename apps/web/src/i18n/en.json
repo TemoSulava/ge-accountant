@@ -1,91 +1,108 @@
 ﻿{
-    "app":  {
-                "title":  "Solo Accounting",
-                "nav":  {
-                            "dashboard":  "Dashboard",
-                            "invoices":  "Invoices",
-                            "expenses":  "Expenses",
-                            "bankImport":  "Bank Import",
-                            "reminders":  "Reminders",
-                            "reports":  "Reports",
-                            "audit":  "Audit Logs",
-                            "settings":  "Settings"
-                        },
-                "actions":  {
-                                "importBank":  "Import Bank CSV",
-                                "newInvoice":  "New Invoice",
-                                "newExpense":  "Add Expense"
-                            },
-                "copy":  {
-                             "currentView":  "Current view",
-                             "sideDescription":  "Manage invoices, expenses, taxes, and reminders in one intuitive space.",
-                             "currentViewDescription":  "A complete snapshot of your IE finances in Tbilisi"
-                         },
-                "sidebar":  {
-                                "periodCopy":  "September data synced at 09:00. Follow the tasks to send declarations on time.",
-                                "viewTasks":  "View tasks",
-                                "periodTitle":  "Active period"
-                            },
-                "dashboard":  {
-                                  "labels":  {
-                                                 "uncategorised":  "Uncategorised"
-                                             },
-                                  "loading":  {
-                                                  "copy":  "Synchronising your finances...",
-                                                  "title":  "Loading dashboard"
-                                              },
-                                  "actions":  {
-                                                  "viewAll":  "View all",
-                                                  "captureReceipt":  "Capture receipt",
-                                                  "createInvoice":  "Create invoice",
-                                                  "viewReports":  "View reports",
-                                                  "manageReminders":  "Manage reminders",
-                                                  "createReminder":  "Create reminder"
-                                              },
-                                  "quickLinks":  {
-                                                     "auditTrail":  "Audit trail",
-                                                     "financialReports":  "Financial reports",
-                                                     "invoiceHistory":  "Invoice history"
-                                                 },
-                                  "noEntity":  {
-                                                   "title":  "No entity yet",
-                                                   "description":  "Create your IE profile to start tracking.",
-                                                   "action":  "Get started"
-                                               },
-                                  "threshold":  {
-                                                    "incomeYtd":  "Income YTD",
-                                                    "remaining":  "Remaining allowance"
-                                                },
-                                  "metrics":  {
-                                                  "expensesSub":  "Last 30 days",
-                                                  "tax":  "Tax forecast",
-                                                  "expenses":  "Expenses",
-                                                  "incomeSub":  "Last 30 days",
-                                                  "taxSub":  "Small business 1%",
-                                                  "buffer":  "Turnover buffer",
-                                                  "income":  "Income",
-                                                  "bufferSub":  "vs yearly threshold"
-                                              },
-                                  "sections":  {
-                                                   "recentExpenses":  "Recent expenses",
-                                                   "trendTitle":  "Monthly performance",
-                                                   "upcomingRemindersCopy":  "Stay ahead across communication channels",
-                                                   "thresholdTitle":  "Yearly threshold",
-                                                   "recentInvoices":  "Recent invoices",
-                                                   "quickLinksCopy":  "Jump into detail screens",
-                                                   "upcomingReminders":  "Upcoming reminders",
-                                                   "quickLinks":  "Quick links",
-                                                   "thresholdCopy":  "Baseline ₾{{threshold}}",
-                                                   "trendCopy":  "Income vs expenses trend"
-                                               },
-                                  "empty":  {
-                                                "invoicesCopy":  "Issue the first invoice in seconds.",
-                                                "expensesTitle":  "No expenses yet",
-                                                "remindersCopy":  "Schedule smart notifications.",
-                                                "remindersTitle":  "No reminders",
-                                                "expensesCopy":  "Upload a receipt or add one manually.",
-                                                "invoicesTitle":  "No invoices yet"
-                                            }
-                              }
-            }
+  "app": {
+    "title": "Solo Accounting",
+    "nav": {
+      "dashboard": "Dashboard",
+      "invoices": "Invoices",
+      "expenses": "Expenses",
+      "bankImport": "Bank Import",
+      "reminders": "Reminders",
+      "reports": "Reports",
+      "audit": "Audit Logs",
+      "settings": "Settings"
+    },
+    "actions": {
+      "newInvoice": "New invoice",
+      "newExpense": "Add expense",
+      "importBank": "Import bank CSV"
+    },
+    "copy": {
+      "sideDescription": "Manage invoices, expenses, taxes, and reminders in one intuitive space.",
+      "currentView": "Current view",
+      "currentViewDescription": "A complete snapshot of your IE finances in Tbilisi"
+    },
+    "sidebar": {
+      "periodTitle": "Active period",
+      "periodCopy": "September data synced at 09:00. Follow the tasks to send declarations on time.",
+      "viewTasks": "View tasks"
+    }
+  },
+  "dashboard": {
+    "loading": {
+      "title": "Loading dashboard",
+      "copy": "Synchronising your finances..."
+    },
+    "noEntity": {
+      "title": "No entity yet",
+      "description": "Create your IE profile to start tracking.",
+      "action": "Get started"
+    },
+    "metrics": {
+      "income": "Income",
+      "incomeSub": "Last 30 days",
+      "expenses": "Expenses",
+      "expensesSub": "Last 30 days",
+      "tax": "Tax forecast",
+      "taxSub": "Small business 1%",
+      "buffer": "Turnover buffer",
+      "bufferSub": "vs yearly threshold"
+    },
+    "sections": {
+      "trendTitle": "Monthly performance",
+      "trendCopy": "Income vs expenses trend",
+      "thresholdTitle": "Yearly threshold",
+      "thresholdCopy": "Baseline ₾{{threshold}}",
+      "recentInvoices": "Recent invoices",
+      "recentExpenses": "Recent expenses",
+      "upcomingReminders": "Upcoming reminders",
+      "upcomingRemindersCopy": "Stay ahead across communication channels",
+      "quickLinks": "Quick links",
+      "quickLinksCopy": "Jump into detail screens"
+    },
+    "threshold": {
+      "incomeYtd": "Income YTD",
+      "remaining": "Remaining allowance"
+    },
+    "actions": {
+      "viewReports": "View reports",
+      "viewAll": "View all",
+      "createInvoice": "Create invoice",
+      "captureReceipt": "Capture receipt",
+      "createReminder": "Create reminder",
+      "manageReminders": "Manage reminders"
+    },
+    "empty": {
+      "invoicesTitle": "No invoices yet",
+      "invoicesCopy": "Issue the first invoice in seconds.",
+      "expensesTitle": "No expenses yet",
+      "expensesCopy": "Upload a receipt or add one manually.",
+      "remindersTitle": "No reminders",
+      "remindersCopy": "Schedule smart notifications."
+    },
+    "labels": {
+      "uncategorised": "Uncategorised"
+    },
+    "quickLinks": {
+      "invoiceHistory": "Invoice history",
+      "financialReports": "Financial reports",
+      "auditTrail": "Audit trail"
+    }
+  },
+  "invoices": {
+    "title": "Invoices",
+    "subtitle": "Track payment status, send PDFs and emails",
+    "actions": {
+      "new": "New invoice",
+      "view": "Open"
+    },
+    "table": {
+      "number": "Number",
+      "date": "Issued",
+      "total": "Total",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "loading": "Loading invoices...",
+    "empty": "No invoices for this period yet"
+  }
 }

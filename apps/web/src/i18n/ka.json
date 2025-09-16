@@ -1,91 +1,108 @@
 ﻿{
-    "app":  {
-                "title":  "სოლო ბუღალტერია",
-                "nav":  {
-                            "dashboard":  "დაფა",
-                            "invoices":  "ინვოისები",
-                            "expenses":  "ხარჯები",
-                            "bankImport":  "ბანკის იმპორტი",
-                            "reminders":  "დავალებები",
-                            "reports":  "მოხსენებები",
-                            "audit":  "აუდიტი",
-                            "settings":  "პარამეტრები"
-                        },
-                "actions":  {
-                                "importBank":  "ბანკის CSV",
-                                "newInvoice":  "ახალი ინვოისი",
-                                "newExpense":  "ხარჯის დამატება"
-                            },
-                "copy":  {
-                             "currentView":  "მიმდინარე ხედვა",
-                             "sideDescription":  "მართეთ ინვოისები, ხარჯები, გადასახადები და დავალებები ერთ ინტუიციურ სივრცეში.",
-                             "currentViewDescription":  "სრული სურათი თბილისის ინდ. მეწარმის ფინანსებზე"
-                         },
-                "sidebar":  {
-                                "periodCopy":  "სექტემბრის მონაცემები განახლდა 09:00 საათზე. მიჰყევით დავალებებს, რათა დეკლარაციები დროულად გაიგზავნოს.",
-                                "viewTasks":  "ნახე დავალებები",
-                                "periodTitle":  "აქტიური პერიოდი"
-                            },
-                "dashboard":  {
-                                  "labels":  {
-                                                 "uncategorised":  "უნაწილო"
-                                             },
-                                  "loading":  {
-                                                  "copy":  "მონაცემების სინქრონიზაცია...",
-                                                  "title":  "ვტვირთავთ დაფას"
-                                              },
-                                  "actions":  {
-                                                  "viewAll":  "ნახე ყველა",
-                                                  "captureReceipt":  "ჩაწერე ხარჯი",
-                                                  "createInvoice":  "ახალი ინვოისი",
-                                                  "viewReports":  "ნახე მოხსენებები",
-                                                  "manageReminders":  "მართე შეხსენებები",
-                                                  "createReminder":  "შექმენი შეხსენება"
-                                              },
-                                  "quickLinks":  {
-                                                     "auditTrail":  "აუდიტის ჟურნალი",
-                                                     "financialReports":  "ფინანსური მოხსენებები",
-                                                     "invoiceHistory":  "ინვოისების ისტორია"
-                                                 },
-                                  "noEntity":  {
-                                                   "title":  "ჯერ არ გაქვთ IE პროფილი",
-                                                   "description":  "დაამატეთ ინდ. მეწარმე რომ ნახოთ დაფა.",
-                                                   "action":  "დაწყება"
-                                               },
-                                  "threshold":  {
-                                                    "incomeYtd":  "შემოსავალი YTD",
-                                                    "remaining":  "დარჩენილი ზღვარი"
-                                                },
-                                  "metrics":  {
-                                                  "expensesSub":  "ბოლო 30 დღე",
-                                                  "tax":  "გადასახადის პროგნოზი",
-                                                  "expenses":  "ხარჯები",
-                                                  "incomeSub":  "ბოლო 30 დღე",
-                                                  "taxSub":  "გამარტივებული 1%",
-                                                  "buffer":  "ბრუნვის ბუფერი",
-                                                  "income":  "შემოსავალი",
-                                                  "bufferSub":  "წლიურ ნიშნულთან შედარებით"
-                                              },
-                                  "sections":  {
-                                                   "recentExpenses":  "ბოლო ხარჯები",
-                                                   "trendTitle":  "თვიური დინამიკა",
-                                                   "upcomingRemindersCopy":  "შეინარჩუნეთ დისციპლინა საკომუნიკაციო არხებით",
-                                                   "thresholdTitle":  "წლიური ზღვარი",
-                                                   "recentInvoices":  "ბოლო ინვოისები",
-                                                   "quickLinksCopy":  "გადადი დეტალურ მოდულებზე",
-                                                   "upcomingReminders":  "მომდევნო შეხსენებები",
-                                                   "quickLinks":  "სწრაფი ბმულები",
-                                                   "thresholdCopy":  "საბაზისო ზღვარი ₾{{threshold}}",
-                                                   "trendCopy":  "შემოსავალი vs ხარჯები მიხედვით"
-                                               },
-                                  "empty":  {
-                                                "invoicesCopy":  "შექმენით პირველი ინვოისი რამდენიმე წამში.",
-                                                "expensesTitle":  "ჯერ არ არსებობს ხარჯი",
-                                                "remindersCopy":  "დაგეგმეთ ინტელექტუალური შეტყობინებები.",
-                                                "remindersTitle":  "დავალებები არ არის",
-                                                "expensesCopy":  "ატვირთეთ ქვითარი ან დაამატეთ ხელით.",
-                                                "invoicesTitle":  "ჯერ არ არსებობს ინვოისი"
-                                            }
-                              }
-            }
+  "app": {
+    "title": "სოლო ბუღალტერია",
+    "nav": {
+      "dashboard": "დაფა",
+      "invoices": "ინვოისები",
+      "expenses": "ხარჯები",
+      "bankImport": "ბანკის იმპორტი",
+      "reminders": "დავალებები",
+      "reports": "მოხსენებები",
+      "audit": "აუდიტი",
+      "settings": "პარამეტრები"
+    },
+    "actions": {
+      "newInvoice": "ახალი ინვოისი",
+      "newExpense": "ხარჯის დამატება",
+      "importBank": "ბანკის CSV"
+    },
+    "copy": {
+      "sideDescription": "მართეთ ინვოისები, ხარჯები, გადასახადები და დავალებები ერთ ინტუიციურ სივრცეში.",
+      "currentView": "მიმდინარე ხედვა",
+      "currentViewDescription": "სრული სურათი თბილისის ინდ. მეწარმის ფინანსებზე"
+    },
+    "sidebar": {
+      "periodTitle": "აქტიური პერიოდი",
+      "periodCopy": "სექტემბრის მონაცემები განახლდა 09:00 საათზე. მიჰყევით დავალებებს, რათა დეკლარაციები დროულად გაიგზავნოს.",
+      "viewTasks": "ნახე დავალებები"
+    }
+  },
+  "dashboard": {
+    "loading": {
+      "title": "ვტვირთავთ დაფას",
+      "copy": "მონაცემების სინქრონიზაცია..."
+    },
+    "noEntity": {
+      "title": "ჯერ არ გაქვთ IE პროფილი",
+      "description": "დაამატეთ ინდ. მეწარმე რომ ნახოთ დაფა.",
+      "action": "დაწყება"
+    },
+    "metrics": {
+      "income": "შემოსავალი",
+      "incomeSub": "ბოლო 30 დღე",
+      "expenses": "ხარჯები",
+      "expensesSub": "ბოლო 30 დღე",
+      "tax": "გადასახადის პროგნოზი",
+      "taxSub": "გამარტივებული 1%",
+      "buffer": "ბრუნვის ბუფერი",
+      "bufferSub": "წლიურ ნიშნულთან შედარებით"
+    },
+    "sections": {
+      "trendTitle": "თვიური დინამიკა",
+      "trendCopy": "შემოსავალი vs ხარჯები მიხედვით",
+      "thresholdTitle": "წლიური ზღვარი",
+      "thresholdCopy": "საბაზისო ზღვარი ₾{{threshold}}",
+      "recentInvoices": "ბოლო ინვოისები",
+      "recentExpenses": "ბოლო ხარჯები",
+      "upcomingReminders": "მომდევნო შეხსენებები",
+      "upcomingRemindersCopy": "შეინარჩუნეთ დისციპლინა საკომუნიკაციო არხებით",
+      "quickLinks": "სწრაფი ბმულები",
+      "quickLinksCopy": "გადადი დეტალურ მოდულებზე"
+    },
+    "threshold": {
+      "incomeYtd": "შემოსავალი YTD",
+      "remaining": "დარჩენილი ზღვარი"
+    },
+    "actions": {
+      "viewReports": "ნახე მოხსენებები",
+      "viewAll": "ნახე ყველა",
+      "createInvoice": "ახალი ინვოისი",
+      "captureReceipt": "ჩაწერე ხარჯი",
+      "createReminder": "შექმენი შეხსენება",
+      "manageReminders": "მართე შეხსენებები"
+    },
+    "empty": {
+      "invoicesTitle": "ჯერ არ არსებობს ინვოისი",
+      "invoicesCopy": "შექმენით პირველი ინვოისი რამდენიმე წამში.",
+      "expensesTitle": "ჯერ არ არსებობს ხარჯი",
+      "expensesCopy": "ატვირთეთ ქვითარი ან დაამატეთ ხელით.",
+      "remindersTitle": "დავალებები არ არის",
+      "remindersCopy": "დაგეგმეთ ინტელექტუალური შეტყობინებები."
+    },
+    "labels": {
+      "uncategorised": "უნაწილო"
+    },
+    "quickLinks": {
+      "invoiceHistory": "ინვოისების ისტორია",
+      "financialReports": "ფინანსური მოხსენებები",
+      "auditTrail": "აუდიტის ჟურნალი"
+    }
+  },
+  "invoices": {
+    "title": "ინვოისები",
+    "subtitle": "გადახდის სტატუსები, PDF და ელ. გაგზავნა",
+    "actions": {
+      "new": "ახალი ინვოისი",
+      "view": "გახსნა"
+    },
+    "table": {
+      "number": "ნომერი",
+      "date": "გაცემის თარიღი",
+      "total": "ჯამი",
+      "status": "სტატუსი",
+      "actions": "ქმედებები"
+    },
+    "loading": "ინვოისების ჩატვირთვა...",
+    "empty": "ამ პერიოდში ინვოისი არ არის"
+  }
 }

@@ -20,6 +20,8 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Audit logging implemented (global audit service, log capture across core services, and audit-log listing endpoint).
 - Dashboard UX implemented (dynamic metrics, threshold tracking, recent activity, reminders, modern visuals).
 - Frontend auth onboarding flow delivered (theme + language toggles, login/register/onboarding screens, protected routing, session management).
+- Dashboard UX implemented (dynamic metrics, threshold tracking, recent activity, reminders, modern visuals).
+- Invoices UI implemented (query-backed table, status tags, i18n strings, quick actions).
 
 ## In Progress
 - Backend polish: queue monitoring, analytics exports, audit reporting dashboards.
