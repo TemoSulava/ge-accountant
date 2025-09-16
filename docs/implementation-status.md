@@ -12,14 +12,15 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Categories API implemented (per-entity list/create/update) with ownership guards and DTO validation.
 - Invoices API implemented (per-entity list/create/get/update status, payments) with sequential numbering, totals calculation, and payment-driven status updates.
 - Expenses API implemented (per-entity list/create with file upload stub, OCR placeholder, and category linkage).
-- Bank import module implemented (CSV parsing for BOG/TBC/custom mappings, rules-based categorisation, transaction CRUD).
+- Bank import module implemented (CSV parsing for BOG/TBC/custom mappings, rules-based categorisation, transaction management).
+- Tax engine implemented (period listing/close, turnover + tax computation, reminders, RS.ge CSV export, mark-paid endpoint).
 
 ## In Progress
-- Backend domain modules build-out: tax, reminders, reports.
+- Backend domain modules build-out: reminders job orchestration and financial reports.
 - Frontend layout/infrastructure planning (routing shell, state/i18n providers, auth + accounting flows integration).
 
 ## Planned
-- Complete backend feature set per spec (tax engine, reminders, reports) with validation, security, and automated tests.
+- Complete backend feature set per spec (background reminders scheduling, reports exports) with validation, security, and automated tests.
 - Deliver frontend UI/UX flows covering onboarding, dashboard, invoices, expenses, bank import, tax close, reports, and reminders.
 - Seed data, sample files, and DevOps automation (Docker Compose runtime, GitHub Actions, Makefile commands) refined for production-readiness.
 - Observability, notifications, localization, and compliance artifacts (OpenAPI, Postman collection, PDFs, CSV samples).
