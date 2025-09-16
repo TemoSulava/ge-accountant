@@ -236,5 +236,44 @@
                               "copy":  "Close the current month to see metrics and generate exports.",
                               "title":  "No tax periods yet"
                           }
-            }
+            },
+    "reminders":  {
+                      "loading":  "Loading reminders...",
+                      "stats":  {
+                                    "queue":  "{count} queued"
+                                },
+                      "subtitle":  "Schedule automations across email and Telegram",
+                      "history":  {
+                                      "empty":  "No reminders sent yet."
+                                  },
+                      "sections":  {
+                                       "history":  "Sent history",
+                                       "upcomingCopy":  "Automate nudges before deadlines.",
+                                       "historyCopy":  "Delivered reminders",
+                                       "upcoming":  "Upcoming reminders"
+                                   },
+                      "modal":  {
+                                    "description":  "Configure when and where the reminder should be delivered.",
+                                    "type":  "Reminder type",
+                                    "cancel":  "Cancel",
+                                    "saving":  "Saving...",
+                                    "channel":  "Channel",
+                                    "save":  "Create",
+                                    "typePlaceholder":  "e.g. RS declaration",
+                                    "title":  "Create reminder",
+                                    "dueDate":  "Send at"
+                                },
+                      "actions":  {
+                                      "new":  "New reminder"
+                                  },
+                      "title":  "Tasks \u0026 reminders",
+                      "channels":  {
+                                       "telegram":  "Telegram",
+                                       "email":  "Email"
+                                   },
+                      "empty":  {
+                                    "copy":  "Create smart notifications to keep filings on track.",
+                                    "title":  "No reminders yet"
+                                }
+                  }
 }
