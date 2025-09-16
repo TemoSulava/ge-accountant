@@ -1,0 +1,12 @@
+1) Review tasklist frontend breakdown.
+2) Scaffold frontend shell (layout, theming, navigation).
+3) Implement auth/onboarding flows on frontend.
+4) Build dashboard UI with modern visuals.
+5) Implement invoices front-end feature set.
+6) Implement expenses UI with receipt upload experience.
+7) Build bank import wizard front-end.
+8) Implement tax period front-end.
+9) Implement reminders management front-end.
+10) Implement reports visualizations front-end.
+11) Surface audit trail UI + settings panels.
+12) Seed/sample data & docs polish.

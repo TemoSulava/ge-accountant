@@ -29,3 +29,17 @@
 - [ ] Provide sample data, seed scripts, example files, and demo user.
 - [ ] Add E2E smoke tests (Playwright) and ensure CI coverage.
 - [ ] Finalize observability, security hardening, and documentation (OpenAPI, Postman collection, README walkthrough).
+
+## Frontend Implementation Breakdown
+1. [x] Establish React app shell: global layout, navigation, theming, typography, and unique visual identity (Tailwind + custom design tokens).
+2. [x] Implement auth/onboarding flow: sign-in/register screens, entity creation wizard, locale switcher, session handling.
+3. [x] Build dashboard: KPI tiles, threshold bar, recent activity lists, and responsive layout.
+4. Deliver invoices UI: list, create/edit forms with React Hook Form + Zod, item editor, PDF trigger, email send, payments timeline.
+5. Ship expenses experience: receipt upload dropzone with preview/OCR stub, categorisation controls, editable table.
+6. Craft bank import wizard: CSV upload, mapping UI, rule suggestions, transaction review table with bulk actions.
+7. Implement tax period screens: close period modal, summary, RS.ge export download, reminder scheduling UI.
+8. Create reminders management: list, create modal, status indicators, queue status hints.
+9. Build reports views: P&L and cashflow charts/tables with filters and export controls.
+10. Surface audit trail: filterable log viewer with action badges and context detail panel.
+11. Integrate notification and user settings panels (email/Telegram hooks, timezone, thresholds).
+12. Add sample data seeding UI cues and link to documentation; final polish and accessibility review.

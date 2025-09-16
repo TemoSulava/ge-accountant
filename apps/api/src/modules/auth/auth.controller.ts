@@ -1,4 +1,4 @@
-﻿import { Body, Controller, HttpCode, HttpStatus, Post, Req, Res, UseGuards } from "@nestjs/common";
+﻿import { Body, Controller, Get, HttpCode, HttpStatus, Post, Req, Res, UseGuards } from "@nestjs/common";
 import { Request, Response } from "express";
 import { CurrentUser } from "../../common/decorators/current-user.decorator";
 import { AccessTokenGuard } from "../../common/guards/access-token.guard";
@@ -11,6 +11,13 @@ import { RegisterDto } from "./dto/register.dto";
 @Controller("auth")
 export class AuthController {
   constructor(private readonly authService: AuthService) {}
+
+  @Get("me")
+  @UseGuards(AccessTokenGuard)
+  async me(@CurrentUser() user: RequestUser) {
+    const profile = await this.authService.profile(user.id);
+    return { user: profile };
+  }
 
   @Post("register")
   async register(@Body() dto: RegisterDto, @Res({ passthrough: true }) res: Response) {

@@ -1,8 +1,18 @@
 ﻿import axios from "axios";
+import { getAccessToken } from "./session";
 
 export const api = axios.create({
   baseURL: "/api/v1",
   withCredentials: true
+});
+
+api.interceptors.request.use((config) => {
+  const token = getAccessToken();
+  if (token) {
+    config.headers = config.headers ?? {};
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 api.interceptors.response.use(

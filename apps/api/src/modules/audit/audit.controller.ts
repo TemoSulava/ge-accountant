@@ -16,6 +16,6 @@ export class AuditController {
     @Param("entityId") entityId: string,
     @Query() query: AuditLogQueryDto
   ) {
-    return this.auditService.list(user, entityId, query);
+    return this.auditService.list(user.id, entityId, query);
   }
 }

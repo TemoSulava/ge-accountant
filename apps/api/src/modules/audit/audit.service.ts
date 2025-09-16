@@ -1,7 +1,6 @@
 ﻿import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
-import { RequestUser } from "../../common/types/request-user";
 import { AuditLogQueryDto } from "./dto/audit-log-query.dto";
 
 @Injectable()
@@ -19,8 +18,8 @@ export class AuditService {
     });
   }
 
-  async list(user: RequestUser, entityId: string, query: AuditLogQueryDto) {
-    await this.ensureEntityOwnership(user.id, entityId);
+  async list(userId: string, entityId: string, query: AuditLogQueryDto) {
+    await this.ensureEntityOwnership(userId, entityId);
 
     const where: Prisma.AuditLogWhereInput = {
       entityId
@@ -60,4 +59,3 @@ export class AuditService {
     }
   }
 }
-

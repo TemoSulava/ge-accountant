@@ -1,4 +1,4 @@
-﻿import { ConflictException, Injectable, UnauthorizedException } from "@nestjs/common";
+﻿import { ConflictException, Injectable, UnauthorizedException, NotFoundException } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
 import { JwtService } from "@nestjs/jwt";
 import { User } from "@prisma/client";
@@ -82,6 +82,14 @@ export class AuthService {
     };
   }
 
+  async profile(userId: string) {
+    const user = await this.prisma.user.findUnique({ where: { id: userId } });
+    if (!user) {
+      throw new NotFoundException("USER_NOT_FOUND");
+    }
+    return this.sanitizeUser(user);
+  }
+
   async refresh(userId: string, refreshToken?: string) {
     if (!refreshToken) {
       throw new UnauthorizedException("REFRESH_FAILED");
@@ -141,6 +149,3 @@ export class AuthService {
     return safeUser;
   }
 }
-
-
-

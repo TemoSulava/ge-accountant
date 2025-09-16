@@ -15,8 +15,11 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Bank import module implemented (CSV parsing for BOG/TBC/custom mappings, rules-based categorisation, transaction management).
 - Tax engine implemented (period close/list, mark paid, reminders, RS.ge export).
 - Reminders module implemented (cron scheduling, queue processing, notification stub).
+- Frontend shell established (AppLayout, theming, providers, navigation, unique visual language).
 - Reports module implemented (P&L and Cashflow endpoints with date filtering and aggregated metrics).
 - Audit logging implemented (global audit service, log capture across core services, and audit-log listing endpoint).
+- Dashboard UX implemented (dynamic metrics, threshold tracking, recent activity, reminders, modern visuals).
+- Frontend auth onboarding flow delivered (theme + language toggles, login/register/onboarding screens, protected routing, session management).
 
 ## In Progress
 - Backend polish: queue monitoring, analytics exports, audit reporting dashboards.

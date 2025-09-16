@@ -2,8 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-#root {
-  height: 100%;
+@layer base {
+  :root {
+    --color-brand-50: #f5f7ff;
+    --color-brand-100: #eaefff;
+    --color-brand-200: #d3dcff;
+    --color-brand-300: #afc0ff;
+    --color-brand-400: #7f96ff;
+    --color-brand-500: #4c6fff;
+    --color-brand-600: #3857e6;
+    --color-brand-700: #2d44b8;
+    --color-brand-800: #25388f;
+    --color-brand-900: #1d2c69;
+
+    --color-surface: #f8f9ff;
+    --color-surface-muted: rgba(255, 255, 255, 0.65);
+
+    --color-ink-400: #7c8aa0;
+    --color-ink-500: #63708c;
+    --color-ink-600: #4f5b73;
+    --color-ink-700: #3c475c;
+    --color-ink-800: #2a3144;
+    --color-ink-900: #171d2d;
+
+    --color-gradient-start: rgba(76, 111, 255, 0.18);
+    --color-gradient-end: rgba(28, 200, 225, 0.18);
+
+    color: var(--color-ink-900);
+    background-color: var(--color-surface);
+  }
+
+  body {
+    @apply min-h-screen font-sans bg-surface text-ink-900 antialiased;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.6), transparent 45%),
+      radial-gradient(circle at 90% 10%, rgba(76, 111, 255, 0.18), transparent 55%),
+      radial-gradient(circle at 30% 90%, rgba(28, 200, 225, 0.14), transparent 60%);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-surface-muted backdrop-blur-xl border border-white/40 shadow-panel;
+  }
+
+  .grid-background {
+    background-image: linear-gradient(rgba(76, 111, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(76, 111, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 }
