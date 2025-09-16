@@ -13,14 +13,17 @@ This document tracks implemented, in-progress, and planned work against the Solo
 - Invoices API implemented (per-entity list/create/get/update status, payments) with sequential numbering, totals calculation, and payment-driven status updates.
 - Expenses API implemented (per-entity list/create with file upload stub, OCR placeholder, and category linkage).
 - Bank import module implemented (CSV parsing for BOG/TBC/custom mappings, rules-based categorisation, transaction management).
-- Tax engine implemented (period listing/close, turnover + tax computation, reminders, RS.ge CSV export, mark-paid endpoint).
+- Tax engine implemented (period close/list, mark paid, reminders, RS.ge export).
+- Reminders module implemented (cron scheduling, queue processing, notification stub).
+- Reports module implemented (P&L and Cashflow endpoints with date filtering and aggregated metrics).
+- Audit logging implemented (global audit service, log capture across core services, and audit-log listing endpoint).
 
 ## In Progress
-- Backend domain modules build-out: reminders job orchestration and financial reports.
+- Backend polish: queue monitoring, analytics exports, audit reporting dashboards.
 - Frontend layout/infrastructure planning (routing shell, state/i18n providers, auth + accounting flows integration).
 
 ## Planned
-- Complete backend feature set per spec (background reminders scheduling, reports exports) with validation, security, and automated tests.
-- Deliver frontend UI/UX flows covering onboarding, dashboard, invoices, expenses, bank import, tax close, reports, and reminders.
+- Complete backend feature set per spec (audit log surfacing in UI, financial exports) with validation, security, and automated tests.
+- Deliver frontend UI/UX flows covering onboarding, dashboard, invoices, expenses, bank import, tax close, reports, reminders, and audit history.
 - Seed data, sample files, and DevOps automation (Docker Compose runtime, GitHub Actions, Makefile commands) refined for production-readiness.
 - Observability, notifications, localization, and compliance artifacts (OpenAPI, Postman collection, PDFs, CSV samples).

@@ -2,11 +2,15 @@
 import { InvoiceStatus, Prisma, TaxStatus } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
 import { RequestUser } from "../../common/types/request-user";
+import { AuditService } from "../audit/audit.service";
 import { ClosePeriodDto, PayTaxPeriodDto } from "./dto/tax.dto";
 
 @Injectable()
 export class TaxService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditService
+  ) {}
 
   async list(user: RequestUser, entityId: string) {
     await this.ensureEntityOwnership(user.id, entityId);
@@ -56,6 +60,12 @@ export class TaxService {
       }
     });
 
+    await this.audit.log(user.id, entityId, "tax:closePeriod", {
+      taxPeriodId: created.id,
+      turnover: Number(created.turnover),
+      taxDue: Number(created.taxDue)
+    });
+
     await this.createReminder(entityId, periodEnd);
 
     return created;
@@ -71,10 +81,17 @@ export class TaxService {
 
     const paidAt = dto.paidAt ? new Date(dto.paidAt) : new Date();
 
-    return this.prisma.taxPeriod.update({
+    const updated = await this.prisma.taxPeriod.update({
       where: { id: taxPeriodId },
       data: { paid: true, paidAt }
     });
+
+    await this.audit.log(user.id, updated.entityId, "tax:markPaid", {
+      taxPeriodId,
+      paidAt: updated.paidAt ?? paidAt
+    });
+
+    return updated;
   }
 
   async exportRs(user: RequestUser, entityId: string, period: string) {
@@ -173,4 +190,3 @@ export class TaxService {
     return entity;
   }
 }
-

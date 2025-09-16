@@ -3,6 +3,7 @@ import { parse } from "csv-parse/sync";
 import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
 import { RequestUser } from "../../common/types/request-user";
+import { AuditService } from "../audit/audit.service";
 import { BankImportDto, SupportedBank, UpdateTransactionDto } from "./dto/bank-import.dto";
 
 interface RawTransaction {
@@ -30,7 +31,10 @@ interface ParsedRule {
 
 @Injectable()
 export class BankService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditService
+  ) {}
 
   async import(user: RequestUser, entityId: string, dto: BankImportDto, file?: Express.Multer.File) {
     if (!file) {
@@ -61,6 +65,12 @@ export class BankService {
     const data = records.map((record) => this.mapToPrisma(entityId, record, rules, categoryByName));
 
     const created = await this.prisma.bankTransaction.createMany({ data });
+
+    await this.audit.log(user.id, entityId, "bank:import", {
+      bank: dto.bank,
+      transactions: created.count
+    });
+
     return { imported: created.count };
   }
 
@@ -82,7 +92,7 @@ export class BankService {
       throw new NotFoundException("TRANSACTION_NOT_FOUND");
     }
 
-    return this.prisma.bankTransaction.update({
+    const updated = await this.prisma.bankTransaction.update({
       where: { id: transactionId },
       data: {
         categoryId: dto.categoryId,
@@ -90,6 +100,14 @@ export class BankService {
       },
       include: { category: true }
     });
+
+    await this.audit.log(user.id, updated.entityId, "bank:updateTransaction", {
+      transactionId,
+      categoryId: dto.categoryId,
+      linkedInvoiceId: dto.linkedInvoiceId
+    });
+
+    return updated;
   }
 
   private parseCsv(text: string, dto: BankImportDto): RawTransaction[] {
@@ -119,7 +137,7 @@ export class BankService {
           currency: "Currency",
           description: "Description",
           counterparty: "Counterparty"
-        } as Record<string, string>;
+        };
       case SupportedBank.TBC:
         return {
           date: "TxnDate",
@@ -128,7 +146,7 @@ export class BankService {
           currency: "Currency",
           description: "Details",
           counterparty: "Account"
-        } as Record<string, string>;
+        };
       default:
         throw new BadRequestException("MAPPING_REQUIRED");
     }
@@ -227,4 +245,3 @@ export class BankService {
     }
   }
 }
-

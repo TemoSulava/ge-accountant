@@ -1,11 +1,15 @@
 ﻿import { Injectable, NotFoundException } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
+import { AuditService } from "../audit/audit.service";
 import { CreateExpenseDto } from "./dto/create-expense.dto";
 
 @Injectable()
 export class ExpensesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditService
+  ) {}
 
   async list(userId: string, entityId: string) {
     await this.ensureEntityOwnership(userId, entityId);
@@ -26,7 +30,7 @@ export class ExpensesService {
 
     const receiptInfo = this.prepareReceipt(file);
 
-    return this.prisma.expense.create({
+    const expense = await this.prisma.expense.create({
       data: {
         entityId,
         date: new Date(dto.date),
@@ -39,6 +43,14 @@ export class ExpensesService {
       },
       include: { category: true }
     });
+
+    await this.audit.log(userId, entityId, "expense:create", {
+      expenseId: expense.id,
+      amount: Number(expense.amount),
+      categoryId: expense.categoryId
+    });
+
+    return expense;
   }
 
   private prepareReceipt(file?: Express.Multer.File) {
@@ -46,7 +58,6 @@ export class ExpensesService {
       return null;
     }
 
-    // Placeholder storage logic; real implementation will upload to S3/MinIO
     const url = `s3://pending/${file.originalname}`;
     const ocrText = this.extractTextStub(file);
     return { url, ocrText };

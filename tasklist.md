@@ -14,15 +14,18 @@
 - [x] Implement expenses API (per-entity list/create with file upload + OCR placeholder).
 - [x] Implement bank import module (CSV parsing, rule-based categorisation, transaction management).
 - [x] Implement tax engine (period close/list, mark paid, reminders, RS.ge export).
+- [x] Implement reminders module (cron scheduling, queue processing, notification stub).
+- [x] Implement reports module (P&L and cashflow endpoints with date filtering).
+- [x] Implement audit logging (global audit service, endpoints, integration across core flows).
 
 ## In Progress
-- [ ] Backend domain modules: reminders job orchestration, reports, audit trail.
+- [ ] Backend domain polish: queue monitoring, analytics exports, audit dashboards.
 - [ ] Frontend architecture: layout shell, auth/entity-aware routing, TanStack Query + i18n providers.
 
 ## Planned
 - [ ] Extend entity onboarding/settings UI flows on frontend.
-- [ ] Build reminders system (BullMQ schedules, email/Telegram notifications).
-- [ ] Develop financial reports (P&L, cashflow) and exports in frontend/backend.
+- [ ] Build background job dashboards/monitoring and notification integrations (email/Telegram).
+- [ ] Develop financial reports (frontend visualisations, CSV exports) and audit-log UI.
 - [ ] Provide sample data, seed scripts, example files, and demo user.
 - [ ] Add E2E smoke tests (Playwright) and ensure CI coverage.
 - [ ] Finalize observability, security hardening, and documentation (OpenAPI, Postman collection, README walkthrough).

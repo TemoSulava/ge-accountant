@@ -1,12 +1,16 @@
 ﻿import { Injectable, NotFoundException } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 import { PrismaService } from "../../prisma/prisma.service";
+import { AuditService } from "../audit/audit.service";
 import { CreateCategoryDto } from "./dto/create-category.dto";
 import { UpdateCategoryDto } from "./dto/update-category.dto";
 
 @Injectable()
 export class CategoriesService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditService
+  ) {}
 
   async listByEntity(userId: string, entityId: string) {
     await this.ensureEntityOwnership(userId, entityId);
@@ -25,18 +29,32 @@ export class CategoriesService {
       type: dto.type
     };
 
-    return this.prisma.category.create({ data });
+    const category = await this.prisma.category.create({ data });
+    await this.audit.log(userId, entityId, "category:create", {
+      categoryId: category.id,
+      name: category.name,
+      type: category.type
+    });
+    return category;
   }
 
   async update(userId: string, entityId: string, categoryId: string, dto: UpdateCategoryDto) {
     await this.ensureCategoryOwnership(userId, entityId, categoryId);
 
-    const data: Prisma.CategoryUpdateInput = {
-      name: dto.name,
-      type: dto.type
-    };
+    const category = await this.prisma.category.update({
+      where: { id: categoryId },
+      data: {
+        name: dto.name,
+        type: dto.type
+      }
+    });
 
-    return this.prisma.category.update({ where: { id: categoryId }, data });
+    await this.audit.log(userId, entityId, "category:update", {
+      categoryId,
+      changes: dto
+    });
+
+    return category;
   }
 
   private async ensureEntityOwnership(userId: string, entityId: string) {
