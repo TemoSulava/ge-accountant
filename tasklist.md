@@ -9,16 +9,17 @@
 - [x] Reorganize Prisma schema + service layer (refresh token support, relation fixes) and run `prisma generate`.
 - [x] Implement authentication (register/login/refresh/logout) with bcrypt hashing, JWT access tokens, and secure refresh cookies.
 - [x] Implement entity management API (CRUD endpoints, validation, access guards).
+- [x] Implement category management API (per-entity CRUD endpoints with validation and ownership checks).
+- [x] Implement invoices API (per-entity CRUD, sequential numbering, payments, status updates).
+- [x] Implement expenses API (per-entity list/create with file upload + OCR placeholder).
+- [x] Implement bank import module (CSV parsing, rule-based categorisation, transaction management).
 
 ## In Progress
-- [ ] Backend domain modules: categories, invoices, expenses, bank import, tax, reminders, reports.
+- [ ] Backend domain modules: tax engine, reminders, reports.
 - [ ] Frontend architecture: layout shell, auth/entity-aware routing, TanStack Query + i18n providers.
 
 ## Planned
 - [ ] Extend entity onboarding/settings UI flows on frontend.
-- [ ] Develop invoices module (CRUD, PDF generation, email delivery, payments linkage).
-- [ ] Implement expenses module (uploads, OCR stub, categorization, storage).
-- [ ] Implement bank import parsers, mapping UI, and categorization rules engine.
 - [ ] Implement tax engine with period closing, threshold tracking, RS.ge export.
 - [ ] Build reminders system (BullMQ schedules, email/Telegram notifications).
 - [ ] Deliver dashboards, reports (P&L, cashflow), and exports in frontend.
