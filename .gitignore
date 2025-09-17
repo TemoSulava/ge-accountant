@@ -1,8 +1,9 @@
-﻿node_modules/
+node_modules/
 dist/
 build/
 .pnpm-store/
 .env*
+!.env.example
 .DS_Store
 coverage/
 .vscode/
